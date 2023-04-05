@@ -31,7 +31,7 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
  
 
-    let id = localStorage.getItem('id')
+    const id = localStorage.getItem('id')
     console.log(id);
 
     const currentPageString = localStorage.getItem('currentPage');
@@ -47,10 +47,7 @@ export class FormComponent implements OnInit {
 
 
     this.formGroup = JSON.parse(this.formprogrss)
-    console.log(this.formprogrss.currentPage);
-
-   
-
+  
     localStorage.setItem('currentPage', JSON.stringify(this.currentPage));
     this.questions.forEach((question: any, index: number) => {
 
@@ -60,12 +57,6 @@ export class FormComponent implements OnInit {
 
     });
   }
-
-
-
-
-
-
 
   clearProgress(): void {
     localStorage.removeItem('formProgress');
@@ -107,12 +98,12 @@ export class FormComponent implements OnInit {
     localStorage.removeItem('currentPage')
     console.log(this.questionsForm.value);
 
-    let points = localStorage.getItem('surveyid')
-    // points = JSON.parse(points)
-    let id = localStorage.getItem('id')
+    const points = localStorage.getItem('surveyid')
+  
+    const id = localStorage.getItem('id')
     console.log(id);
 
-    let data =
+    const data =
     {
       points,
       id
@@ -123,7 +114,7 @@ export class FormComponent implements OnInit {
     })
 
     this.tostr.success('Survey Completed ',undefined,{    
-      // positionClass:'toast-top-center',
+    
       timeOut:2000,
       closeButton:true,
       progressBar:true
@@ -144,9 +135,3 @@ export class FormComponent implements OnInit {
     
   
   }
-
-
-
-
-
-

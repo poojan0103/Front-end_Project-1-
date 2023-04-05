@@ -32,6 +32,9 @@ export class ProjectService {
   
     return this.http.post('http://localhost:3000/points',data)
   }
+  public redemPoints(data:any):Observable<any>{
+    return this.http.post('http://localhost:3000/redem',data)
+  }
   setToken(token:string){
     localStorage.setItem('token',token);
   }
