@@ -35,6 +35,9 @@ export class ProjectService {
   public redemPoints(data:any):Observable<any>{
     return this.http.post('http://localhost:3000/redem',data)
   }
+  public questions():Observable<any>{
+    return this.http.get('http://localhost:3000/qget')
+  }
   setToken(token:string){
     localStorage.setItem('token',token);
   }

@@ -22,6 +22,7 @@ import { FormComponent } from './form/form.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { QuestionComponent } from './question/question.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { ProfileComponent } from './profile/profile.component';
     DashboardComponent,
     FormComponent,
     ProfileComponent,
+    QuestionComponent,
   
   ],
   imports: [

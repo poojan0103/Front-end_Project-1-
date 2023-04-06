@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectService } from '../project.service';
 
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -38,10 +39,11 @@ export class ProfileComponent implements OnInit {
       points,
       id,
     };
-    let result = confirm('are you sure to redeem points ?');
+    const result = confirm('are you sure to redeem points ?');
     if (result) {
       this.service.redemPoints(data).subscribe((data) => {
         console.log(data);
+        alert("Points Will redeem Sucessfully!")
       });
     }
   }

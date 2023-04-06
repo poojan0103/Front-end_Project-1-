@@ -42,7 +42,8 @@ export class FormComponent implements OnInit {
     this.questionsForm = this.fb.group({});
 
     this.questions = this.service.getQuestions();
-
+    console.log(this.questions);
+    
     this.formprogrss = localStorage.getItem('formProgress')
 
 
@@ -52,7 +53,7 @@ export class FormComponent implements OnInit {
     this.questions.forEach((question: any, index: number) => {
 
       this.questionsForm.addControl(`question${question.id}`, this.fb.control('', Validators.required));
-
+        
 
 
     });

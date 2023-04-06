@@ -6,13 +6,15 @@ import { AuthGuard } from './auth.guard';
 import { SignupComponent } from './signup/signup.component';
 import { FormComponent } from './form/form.component';
 import { ProfileComponent } from './profile/profile.component';
+import { QuestionComponent } from './question/question.component';
 
 const routes: Routes = [
   {path:"signup",component:SignupComponent},
   {path:"login",component:LoginComponent},
   {path:"dashboard",component:DashboardComponent,canActivate:[AuthGuard]},
   {path:"form",component:FormComponent},
-  {path:"profile",component:ProfileComponent}
+  {path:"profile",component:ProfileComponent},
+  {path:"question",component:QuestionComponent}
 
   
 ];

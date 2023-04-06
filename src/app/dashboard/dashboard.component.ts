@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   navigate(surveyid: any) {
     localStorage.setItem('surveyid', surveyid);
 
-    this.router.navigate(['/form']);
+    this.router.navigate(['/question']);
   }
   getprofiile() {
     this.service.getProfile().subscribe((data) => {
