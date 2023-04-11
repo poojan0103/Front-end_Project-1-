@@ -23,9 +23,9 @@ export class DashboardComponent implements OnInit {
       console.log(this.survey);
     });
   }
-  navigate(surveyid: any) {
+  navigate(surveyid: any,survey:any) {
     localStorage.setItem('surveyid', surveyid);
-
+    localStorage.setItem('survey', survey)
     this.router.navigate(['/question']);
   }
   getprofiile() {

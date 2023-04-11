@@ -35,9 +35,21 @@ export class ProjectService {
   public redemPoints(data:any):Observable<any>{
     return this.http.post('http://localhost:3000/redem',data)
   }
-  public questions():Observable<any>{
-    return this.http.get('http://localhost:3000/qget')
+  // public getanswerbyid(_id:any):Observable<any>{
+  //   return this.http.get(`http://localhost:3000/getanswer/${_id}`)
+  // }
+  public updateAnswers(answer: any, id: any):Observable<any>{
+    return this.http.put(`http://localhost:3000/answer/${id}`, answer);
   }
+  public questions(survey:any):Observable<any>{
+    return this.http.get(`http://localhost:3000/qget/${survey}`)
+  }
+  //service for store answer and id in database
+
+  public storeAnswer(data:any):Observable<any>{
+    return this.http.post('http://localhost:3000/ans',data)
+  }
+  
   setToken(token:string){
     localStorage.setItem('token',token);
   }

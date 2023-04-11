@@ -8,12 +8,19 @@
           <p>{{ question.text }}</p>
         </h3>
   
-        <input [type]="question.type === 'number' ? 'number' : 'text'" [formControlName]="'question'+(question.id)" size="20">
+        <input [type]="question.type === 'number' ? 'number' : 'text'" [formControlName]="(question.id)" size="20">
        
       </div>
-      <div class="name">
+      <!-- <div class="name">
         <button *ngIf="currentPage > 1" (click)="onpreviousPage()">Previous</button>
         <button *ngIf="currentPage < 3 " (click)="onnextPage()" >Next</button>
         <button *ngIf="currentPage === 3 " (click)="onFinish()" >Finish</button>
+      </div> -->
+      <div class="name">
+        <button *ngIf="currentPage > 1" (click)="onpreviousPage()">Previous</button>
+        <button *ngIf="(currentPage * questionsPerPage) < questions.length" (click)="onnextPage()" >Next</button>
+        <button *ngIf="(currentPage * questionsPerPage) >= questions.length" (click)="onFinish()" >Finish </button>
       </div>
+   
+  
 </form>
